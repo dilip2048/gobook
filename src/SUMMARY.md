@@ -1,6 +1,6 @@
 # Summary
 
-- [GoBook](gobook/introduction.md)
+- [Introduction](introduction.md)
 - [Array](array/array.md)
 	- [Rotation](array/rotation.md)
 - [Math](math/math.md)
