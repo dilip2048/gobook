@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="gobook/gobook.html"><strong aria-hidden="true">1.</strong> GoBook</a></li><li class="chapter-item expanded "><a href="array/array.html"><strong aria-hidden="true">2.</strong> Array</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="array/rotation.html"><strong aria-hidden="true">2.1.</strong> Rotation</a></li></ol></li><li class="chapter-item expanded "><a href="math/math.html"><strong aria-hidden="true">3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="math/power.html"><strong aria-hidden="true">3.1.</strong> power</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="array/array.html"><strong aria-hidden="true">2.</strong> Array</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="array/rotation.html"><strong aria-hidden="true">2.1.</strong> Rotation</a></li></ol></li><li class="chapter-item expanded "><a href="math/math.html"><strong aria-hidden="true">3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="math/power.html"><strong aria-hidden="true">3.1.</strong> power</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -149,8 +149,8 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#gobook" id="gobook">GoBook</a></h1>
-<p>Programs in Go language for some common problems asked during selection processes. Base programs for my blog and notes. These are only for self reference.</p>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p>This book contains programs in Go language for some common problems asked during selection processes. Base programs for my blog and notes. These are only for self reference for now.</p>
 <h2><a class="header" href="#array" id="array">Array</a></h2>
 <p>The type [n]T is an array of n values of type T.</p>
 <p>The expression</p>
@@ -273,6 +273,21 @@ func main() {
 
         </div>
 
+        
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            var socket = new WebSocket("ws://localhost:3001");
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
         
 
         
