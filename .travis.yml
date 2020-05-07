@@ -13,13 +13,13 @@ before_script:
   - cargo install-update -a
 
 script:
-  - mdbook init /Users/dilipyadav/github-personal/gobook/ && mdbook build /Users/dilipyadav/github-personal/gobook/ && mdbook test /Users/dilipyadav/github-personal/gobook
+  - mdbook build /Users/dilipyadav/github-personal/mdbook && mdbook test /Users/dilipyadav/github-personal/mdbook
 
 deploy:
   provider: pages
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
-  local-dir: /Users/dilipyadav/github-personal/gobook/book
+  local-dir: /Users/dilipyadav/github-personal/mdbook/book
   keep-history: false
   on:
     branch: master
