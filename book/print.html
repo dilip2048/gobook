@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="array/array.html"><strong aria-hidden="true">2.</strong> Array</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="array/rotation.html"><strong aria-hidden="true">2.1.</strong> Rotation</a></li></ol></li><li class="chapter-item expanded "><a href="math/math.html"><strong aria-hidden="true">3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="math/power.html"><strong aria-hidden="true">3.1.</strong> power</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="array/array.html"><strong aria-hidden="true">2.</strong> Array</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="array/rotation.html"><strong aria-hidden="true">2.1.</strong> Rotation</a></li><li class="chapter-item expanded "><a href="array/addOneToNumber.html"><strong aria-hidden="true">2.2.</strong> AddOneToNumber.md</a></li></ol></li><li class="chapter-item expanded "><a href="math/math.html"><strong aria-hidden="true">3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="math/power.html"><strong aria-hidden="true">3.1.</strong> power</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,7 +150,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
-<p>This book contains programs in Go language for some common problems asked during selection processes. Base programs for my blog and notes. These are only for self reference for now.</p>
+<p>This book contains programs in Go language for some common problems asked during selection processes. Base programs for my blog and notes. These notes will help the freshers to crack the interviews.</p>
 <h2><a class="header" href="#array" id="array">Array</a></h2>
 <p>The type [n]T is an array of n values of type T.</p>
 <p>The expression</p>
@@ -218,6 +218,53 @@ func main() {
     leftRotate(arr, d) // Rotate array by d
     printArray(arr)
 }
+</code></pre>
+<h2><a class="header" href="#adding-one-to-number-represented-as-array-of-digits" id="adding-one-to-number-represented-as-array-of-digits">Adding one to number represented as array of digits</a></h2>
+<p>Given a non-negative number represented as an array of digits, add 1 to the number (increment the number represented by the digits). The digits are stored such that the most significant digit is first element of array.</p>
+<p>Examples :</p>
+<pre><code>Input : [1, 2, 4]
+Output : [1, 2, 5]
+
+Input : [9, 9, 9]
+Output : [1, 0, 0, 0]
+</code></pre>
+<p>Below is the implementation to add 1 to number represented by digits.</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+// function to add 1 to the number
+func addOne(s []int) []int{
+    n := len(s)
+
+    //add 1 to last digit and store the carry
+    s[n-1] = s[n-1] + 1
+    carry := s[n-1] / 10
+    s[n-1] = s[n-1] % 10
+
+    //loop from second last element
+    for i := n - 2; i &gt;= 0; i-- {
+        if carry == 1 {
+            s[i] = s[i] + 1
+            carry = s[i] / 10
+            s[i] = s[i] % 10
+        }
+    }
+
+    if carry == 1 {
+        s1 := []int{1}
+        s1 = append(s1, s...)
+        return  s1
+    }
+    return s
+}
+
+func main() {
+    slice := []int{0, 7, 9, 9}
+    s := addOne(slice)
+    print(fmt.Sprintf(&quot;%v&quot;, s))
+}
+
 </code></pre>
 <h2><a class="header" href="#math" id="math">Math</a></h2>
 <p>Maths and computer science go very much hand in hand.</p>
