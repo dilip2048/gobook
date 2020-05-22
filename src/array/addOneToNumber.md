@@ -5,7 +5,7 @@ Given a non-negative number represented as an array of digits, add 1 to the numb
 
 Examples :
 
-```
+```json
 Input : [1, 2, 4]
 Output : [1, 2, 5]
 
