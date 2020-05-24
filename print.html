@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>GoBook</title>
+        
+        <meta name="robots" content="noindex" />
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="array/array.html"><strong aria-hidden="true">2.</strong> Array</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="array/rotation.html"><strong aria-hidden="true">2.1.</strong> Rotation</a></li><li class="chapter-item expanded "><a href="array/addOneToNumber.html"><strong aria-hidden="true">2.2.</strong> AddOneToNumber</a></li><li class="chapter-item expanded "><a href="array/LargestSumContiguousSubarray.html"><strong aria-hidden="true">2.3.</strong> LargestSumContiguousSubarray</a></li><li class="chapter-item expanded "><a href="array/MaxAbsoluteDifference.html"><strong aria-hidden="true">2.4.</strong> MaxAbsoluteDifference</a></li></ol></li><li class="chapter-item expanded "><a href="math/math.html"><strong aria-hidden="true">3.</strong> Math</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="math/power.html"><strong aria-hidden="true">3.1.</strong> power</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
+
+                    <h1 class="menu-title">GoBook</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+<p>This book contains programs in Go language for some common problems asked during selection processes. Base programs for my blog and notes. These notes will help the freshers to crack the interviews.</p>
+<h2><a class="header" href="#array" id="array">Array</a></h2>
+<p>The type [n]T is an array of n values of type T.</p>
+<p>The expression</p>
+<pre><code class="language-go">var a [10]int
+</code></pre>
+<p>declares a variable a as an array of ten integers.</p>
+<p>An array's length is part of its type, so arrays cannot be resized. This seems limiting, but don't worry; Go provides a convenient way of working with arrays.</p>
+<p> </p>
+<hr />
+<p><em><strong>Reference</strong></em>: <a href="https://tour.golang.org/moretypes/6">https://tour.golang.org/moretypes/6</a></p>
+<h2><a class="header" href="#reversal-algorithm-for-array-rotation" id="reversal-algorithm-for-array-rotation">Reversal algorithm for array rotation</a></h2>
+<p>This program will rotate the array of size n by d elements.</p>
+<p><em><strong>Example</strong></em>:</p>
+<pre><code class="language-json">Input :  arr[] = [1, 2, 3, 4, 5, 6, 7]
+         d = 2
+Output : arr[] = [3, 4, 5, 6, 7, 1, 2] 
+</code></pre>
+<p> </p>
+<p>Below is the implementation of the problem:</p>
+<pre><code class="language-go"> 
+package main
+ 
+import &quot;fmt&quot;
+ 
+// Function to left rotate arr of size n by d
+func leftRotate(arr []int, d int) {
+    if d == 0 {
+        return
+    }
+    n := len(arr)
+    reverseArray(arr, 0, d-1)
+    reverseArray(arr, d, n-1)
+    reverseArray(arr, 0, n-1)
+ 
+}
+ 
+// Function to reverse arr from index start to end
+func reverseArray(arr []int, start int, end int) {
+    for start &lt; end {
+        temp := arr[end]
+        arr[end] = arr[start]
+        arr[start] = temp
+        start++
+        end--
+    }
+}
+ 
+// Function to print an array
+func printArray(arr []int)  {
+    n := len(arr)
+    for i := 0; i &lt; n; i++ {
+        fmt.Printf(&quot;%x &quot;, arr[i])
+    }
+}
+ 
+//Driver program to test above functions
+func main() {
+    arr := []int{1, 2, 3, 4, 5, 6, 7}
+    n := len(arr)
+    d := 2
+ 
+    // in case the rotating factor is
+    // greater than array length
+    d = d % n
+    leftRotate(arr, d) // Rotate array by d
+    printArray(arr)
+}
+</code></pre>
+<h2><a class="header" href="#adding-one-to-number-represented-as-array-of-digits" id="adding-one-to-number-represented-as-array-of-digits">Adding one to number represented as array of digits</a></h2>
+<p>Given a non-negative number represented as an array of digits, add 1 to the number (increment the number represented by the digits). The digits are stored such that the most significant digit is first element of array.</p>
+<p>Examples :</p>
+<pre><code class="language-json">Input : [1, 2, 4]
+Output : [1, 2, 5]
+
+Input : [9, 9, 9]
+Output : [1, 0, 0, 0]
+</code></pre>
+<p>Below is the implementation to add 1 to number represented by digits.</p>
+<pre><code class="language-go">package main
+
+import &quot;fmt&quot;
+
+// function to add 1 to the number
+func addOne(s []int) []int{
+    n := len(s)
+
+    //add 1 to last digit and store the carry
+    s[n-1] = s[n-1] + 1
+    carry := s[n-1] / 10
+    s[n-1] = s[n-1] % 10
+
+    //loop from second last element
+    for i := n - 2; i &gt;= 0; i-- {
+        if carry == 1 {
+            s[i] = s[i] + 1
+            carry = s[i] / 10
+            s[i] = s[i] % 10
+        }
+    }
+
+    if carry == 1 {
+        s1 := []int{1}
+        s1 = append(s1, s...)
+        return  s1
+    }
+    return s
+}
+
+func main() {
+    slice := []int{0, 7, 9, 9}
+    s := addOne(slice)
+    print(fmt.Sprintf(&quot;%v&quot;, s))
+}
+
+</code></pre>
+<h2><a class="header" href="#largest-sum-contiguous-subarray" id="largest-sum-contiguous-subarray">Largest Sum Contiguous Subarray</a></h2>
+<p>The maximum sum contiguous subarray for an array { -2, -3, 4, -1, -2, 1, 5, -3 } is 7 with subarray {4, -1, -2, 1, 5}. </p>
+<p>Please find the go program below:</p>
+<pre><code class="language-go">package main
+
+// method to print largest contiguous array sum
+func findMaxSum(a []int) int {
+	currMax := a[0]
+	maxSofar := a[0]
+	for i := 1; i &lt; len(a); i++ {
+		if a[i] + currMax &gt; a[i]{
+			currMax = a[i] + currMax
+		}else {
+			currMax = a[i]
+		}
+		if currMax &gt; maxSofar{
+			maxSofar = currMax
+		}
+	}
+	return maxSofar
+}
+
+func main() {
+	array := []int{-2, -3, 4, -1, -2, 1, 5, -3}
+	println(findMaxSum(array))
+}
+</code></pre>
+<p>Output: 7</p>
+<p>The space and time complexity is O(n).</p>
+<p>To print the subarray, we need to track the start and end of the subarray with maximum sum. Plese find the program below:</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;math&quot;
+)
+
+// method to print largest contiguous array sum
+func findMaxSubarray(a []int) (int, int) {
+	start := 0
+	s := 0
+	end := 0
+	currentMax := 0
+	maxSoFar := math.MinInt64
+	for i := 0; i &lt; len(a); i++ {
+		currentMax = a[i] + currentMax
+		if currentMax &gt; maxSoFar {
+			maxSoFar = currentMax
+			start = s
+			end = i
+		}
+		if currentMax &lt; 0 {
+			currentMax = 0
+			s = i + 1
+		}
+	}
+	return start, end
+}
+
+func main() {
+	array := []int{-2, -3, 4, -1, -2, 1, 5, -3}
+	start, end := findMaxSubarray(array)
+	fmt.Println(array[start : end+1])
+}
+</code></pre>
+<p>Output: [4 -1 -2 1 5]</p>
+<p>The space and time complexity is O(n).</p>
+<h1><a class="header" href="#maximum-absolute-difference-of-value-and-index-sums" id="maximum-absolute-difference-of-value-and-index-sums">Maximum absolute difference of value and index sums</a></h1>
+<p>You are given an array of N integers, A1, A2 ,…, AN. Return maximum value of <code>f(i, j)</code> for all <code>1 ≤ i, j ≤ N.</code>
+<code>f(i, j)</code> is defined as <code>|A[i] - A[j]| + |i - j|</code>, where |x| denotes absolute value of x.</p>
+<p>For example,</p>
+<pre><code class="language-json">A=[1, 3, -1]
+
+f(1, 1) = f(2, 2) = f(3, 3) = 0
+f(1, 2) = f(2, 1) = |1 - 3| + |1 - 2| = 3
+f(1, 3) = f(3, 1) = |1 - (-1)| + |1 - 3| = 4
+f(2, 3) = f(3, 2) = |3 - (-1)| + |2 - 3| = 5
+
+So, we return 5.
+</code></pre>
+<p>Below is the brute force approch of the given problem.</p>
+<pre><code class="language-go">package main
+
+import &quot;math&quot;
+
+// This method with return maximum absolute difference
+func getMaxAbsoluteDifference(A []int) int{
+	max := 0
+	for i := 0; i &lt; len(A)-1; i++ {
+		for j := i + 1; j &lt; len(A); j++ {
+			sum := math.Abs(float64(A[i]-A[j])) + math.Abs(float64(i-j))
+			if int(sum) &gt; max {
+				max = int(sum)
+			}
+		}
+	}
+	return max
+}
+
+func main() {
+	array := []int{ -70, -64, -6, -56, 64,
+		61, -57, 16, 48, -98 }
+	max := getMaxAbsoluteDifference(array)
+	println(max)
+}
+</code></pre>
+<p>Output: 167</p>
+<p>Time Complexity: O(n^2)</p>
+<p>The time complexity O(n) can be acheived using the properties of absolute values. For more explaination, please refer https://www.geeksforgeeks.org/maximum-absolute-difference-value-index-sums/.</p>
+<p>Please find below the go implementation.</p>
+<pre><code class="language-go">package main
+
+import (
+	&quot;fmt&quot;
+	&quot;math&quot;
+)
+
+// This method with return maximum absolute difference
+func getMaxAbsoluteDifference(A []int) int {
+	max1 := math.MinInt64
+	min1 := math.MaxInt64
+	max2 := math.MinInt64
+	min2 := math.MaxInt64
+	for i := 0; i &lt; len(A); i++ {
+		max1 = int(math.Max(float64(max1), float64(A[i]+i)))
+		min1 = int(math.Min(float64(min1), float64(A[i]+i)))
+		max2 = int(math.Max(float64(max2), float64(A[i]-i)))
+		min2 = int(math.Min(float64(min2), float64(A[i]-i)))
+	}
+	return int(math.Max(float64(max1-min1), float64(max2-min2)))
+}
+
+func main() {
+	array := []int{-70, -64, -6, -56, 64,
+		61, -57, 16, 48, -98}
+	max := getMaxAbsoluteDifference(array)
+	m := fmt.Sprintf(&quot;%v&quot;, max)
+	println(m)
+}
+</code></pre>
+<p>Output: 167</p>
+<p>Time Complexity: O(n)</p>
+<h2><a class="header" href="#math" id="math">Math</a></h2>
+<p>Maths and computer science go very much hand in hand.</p>
+<p>Though it is possible for you to be a decent programmer without acing mathematics, having a sound knowledge of discrete mathematics can be a great facilitator when it comes to learning new algorithms.</p>
+<p>The solutions to the problems in this book has the most used mathematics concepts.</p>
+<h2><a class="header" href="#write-a-program-to-calculate-powx-n" id="write-a-program-to-calculate-powx-n">Write a program to calculate pow(x, n)</a></h2>
+<p>Examples :</p>
+<pre><code class="language-css">Input : x = 2, n = 3
+Output : 8
+
+Input : x = 7, n = 2
+Output : 49
+</code></pre>
+<pre><code class="language-go">package main
+
+/* Function to calculate x raised to the power y */
+func power(x int64, n int64) int64 {
+	if n == 0 {
+		return 1
+	}
+	if n%2 == 0 {
+		return power(x, n/2) * power(x, n/2)
+	} else {
+		return x * power(x, n/2) * power(x, n/2)
+	}
+}
+
+/* Program to test function power */
+func main() {
+	result := power(2, 5)
+	println(result)
+}
+</code></pre>
+<p>Time Complexity: O(n)
+Space Complexity: O(1)</p>
+<p>The above code can be optimized to O(log n) by calculating power(x, y/2) once once. Please find the full code below:</p>
+<pre><code class="language-go">package main
+
+// Function to calculate x raised to the power n
+func power(x int64, n int64) int64 {
+	if n == 0 {
+		return 1
+	}
+	temp := power(x, n/2)
+	if n%2 == 0 {
+		return temp * temp
+	} else {
+		return x * temp * temp
+	}
+
+}
+
+func main() {
+	result := power(2, 5)
+	print(result)
+}
+
+</code></pre>
+<p>Time Complexity: O(log n)
+Space Complexity: O(1)</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+        
+        
+        <script type="text/javascript">
+            window.playpen_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+        
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+        
+        
+
+    </body>
+</html>
